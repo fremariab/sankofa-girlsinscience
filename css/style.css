@@ -8,7 +8,7 @@
 
 :root {
   --black: #000000;
-  --brand: #8016b8;
+  --brand: #7C3AED;
   --gap: 45px;
   --nav-h: 58px;
   --ls: 0.8px;
@@ -19,8 +19,8 @@
   --font-heading: "Bebas Neue", sans-serif;
   --font-body: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
-  --purple: #8016b8;
-  --green: #50c878;
+  --purple: #7C3AED;
+  --green: #14B8A6;
   --ink: #000000;
 }
 
@@ -208,7 +208,7 @@ body {
 }
 
 .hero-content h1 span {
-  color: #8016b8;
+  color: #7C3AED;
 }
 
 .hero-content p {
@@ -231,8 +231,8 @@ body {
   height: 65px;
   flex-shrink: 0;
   border-radius: 0px;
-  border: 2px solid #50c878;
-  color: #50c878;
+  border: 2px solid #14B8A6;
+  color: #14B8A6;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -244,7 +244,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: #50c878;
+  background: #14B8A6;
   color: #fff;
 }
 .soaring-particles,
@@ -266,7 +266,7 @@ body {
   inset: 0; /* anchor inside wrap */
   width: 5px;
   height: 5px;
-  background: #8016b8;
+  background: #7C3AED;
   border-radius: 50%;
   opacity: 0;
   filter: drop-shadow(0 0 6px rgba(128, 22, 184, 0.25));
@@ -274,7 +274,7 @@ body {
 }
 
 .particle.alt {
-  background: #50c878;
+  background: #14B8A6;
   filter: drop-shadow(0 0 6px rgba(80, 200, 120, 0.25));
 }
 
@@ -369,10 +369,10 @@ body {
 }
 
 .cta--purple {
-  background: #8016b8;
+  background: #7C3AED;
 }
 .cta--green {
-  background: #50c878;
+  background: #14B8A6;
 }
 .cta--black {
   background: #000000;
@@ -475,7 +475,7 @@ body {
 
 .what-we-do {
   padding: 30px 5% 150px;
-  background: #8016b8;
+  background: #7C3AED;
   text-align: center;
   color: #fff;
 }
@@ -516,7 +516,7 @@ body {
 }
 
 .card:hover .number-box {
-  background: #50c878;
+  background: #14B8A6;
 }
 
 .number-box {
