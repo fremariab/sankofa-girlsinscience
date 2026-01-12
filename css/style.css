@@ -14,7 +14,7 @@
   --ls: 0.8px;
   --font: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
-  --brand-green: #4dbb7a;
+  --brand-green: #14B8A6;
   --text-on-green: #ffffff;
   --font-heading: "Bebas Neue", sans-serif;
   --font-body: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
@@ -380,7 +380,7 @@ body {
 
 .cta:hover,
 .cta:focus-visible {
-  transform: translateY(-2px);
+  transform: translateY(-9px);
   filter: brightness(1.05);
 }
 
