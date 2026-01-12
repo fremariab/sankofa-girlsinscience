@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Sankofa Girls in Science Foundation</title>
+  <meta name="description" content="Reach out for partnerships, mentoring, donations, media, or general questions." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div data-include="partials/header.html"></div>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero -->
+    <section class="hero" aria-label="Contact">
+      <div class="hero-content">
+        <h1>CONTACT</h1>
+        <p>We’re excited to hear from you—let’s build futures in STEM together.</p>
+        <a class="btn-outline" href="mailto:girlsinscienceghana@gmail.com">Email Us</a>
+      </div>
+    </section>
+
+    <!-- Contact details + Netlify form -->
+    <section class="about" id="contact-block">
+      <div class="about__text">
+        <h2 class="about__title">Get in Touch</h2>
+        <p class="about__body">
+          <strong>Address:</strong> Plot No. A36/3, Heavy Industrial Area, Akosombo Road, Tema, Ghana<br />
+          <strong>Phone:</strong> <a href="tel:+233244382639">+233 244 38 26 39</a><br />
+          <strong>Email:</strong> <a href="mailto:girlsinscienceghana@gmail.com">girlsinscienceghana@gmail.com</a>
+        </p>
+
+        <!-- ✅ Netlify Forms integration -->
+        <form name="contact" method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/contact-success.html" novalidate>
+
+          <!-- Netlify needs these -->
+          <input type="hidden" name="form-name" value="contact" />
+          <!-- Honeypot (hidden from users) -->
+          <p class="sr-only" aria-hidden="true">
+            <label>Don’t fill this out if you’re human:
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <label>
+            <span class="sr-only">Your name</span>
+            <input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
+          </label>
+          <br />
+          <label>
+            <span class="sr-only">Email</span>
+            <input type="email" name="email" placeholder="Email address" required aria-label="Email address" />
+          </label>
+          <br />
+          <label>
+            <span class="sr-only">Subject</span>
+            <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
+          </label>
+          <br />
+          <label>
+            <span class="sr-only">Message</span>
+            <textarea name="message" rows="6" placeholder="How can we help?" required aria-label="Message"></textarea>
+          </label>
+
+          <!-- Optional: Netlify reCAPTCHA widget
+          <div data-netlify-recaptcha="true"></div>
+          -->
+
+          <br />
+          <button class="btn-outline btn-outline--purple" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <figure class="about__media" aria-label="Map">
+        <iframe
+          title="GiS location map"
+          src="https://www.google.com/maps?q=Tema%20Ghana&output=embed"
+          width="100%" height="380" style="border:0" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </figure>
+    </section>
+
+    <!-- Extra help -->
+    <section class="what-we-do" aria-labelledby="help-title">
+      <h2 class="section-title" id="help-title">How We Can Help</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="number-box">01.</div>
+          <h3>Partnerships</h3>
+          <p>Collaborate on workshops, scholarships, or club support across Ghanaian schools.</p>
+        </article>
+        <article class="card">
+          <div class="number-box">02.</div>
+          <h3>Mentoring</h3>
+          <p>Volunteer as a mentor, host a career talk, or provide job-shadow opportunities.</p>
+        </article>
+        <article class="card">
+          <div class="number-box">03.</div>
+          <h3>Media &amp; Speaking</h3>
+          <p>Invite GiS to share impact stories and perspectives on girls in STEM.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="get-involved" aria-labelledby="contact-cta">
+      <div class="gi-panel">
+        <h2 id="contact-cta" class="gi-title">Prefer to Talk?</h2>
+        <p class="gi-lede">Call us during business hours or drop an email—we’ll respond promptly.</p>
+        <a class="gi-btn" href="tel:+233244382639">Call +233 244 38 26 39</a>
+      </div>
+      <div class="gi-media">
+        <img src="assets/images/img11.JPG" alt="Smiling students in class" loading="lazy" />
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="js/includes.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

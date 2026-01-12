@@ -731,7 +731,7 @@ body {
 }
 
 .gi-title {
-  max-width: 479px;
+  max-width: 400px;
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 80px;
@@ -743,7 +743,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1;
   opacity: 0.95;
   max-width: 40ch;
 }
