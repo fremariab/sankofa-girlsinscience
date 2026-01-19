@@ -85,6 +85,7 @@ body {
   margin: 0;
   align-items: center;
   gap: 20px;
+  
 }
 .nav__links a {
   text-decoration: none;
@@ -96,6 +97,15 @@ body {
   padding: 6px 2px;
   outline: none;
   transition: color 0.18s ease;
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6; 
+}
+
+.nav__links a[data-nav="home"] {
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 1;
 }
 .nav__links a:hover,
 .nav__links a:focus-visible,
@@ -112,6 +122,7 @@ body {
   height: 2px;
   background: currentColor;
 }
+
 .nav__links a:focus-visible {
   box-shadow: 0 0 0 2px color-mix(in oklab, var(--brand) 60%, white);
   border-radius: 3px;
