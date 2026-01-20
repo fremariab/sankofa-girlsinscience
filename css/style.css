@@ -66,12 +66,12 @@ body {
   width: 100%;
 }
 
-.nav__logo {
+.nav__sankofablack {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
 }
-.nav__logo img {
+.nav__sankofablack img {
   display: block;
   height: 50px;
   width: auto;
@@ -149,7 +149,7 @@ body {
     padding-inline: 0;
   }
 
-  .nav__logo img {
+  .nav__sankofablack img {
     height: 58px;
     width: auto;
     object-fit: cover;
@@ -483,29 +483,62 @@ body {
     justify-self: end;
   }
 }
-
 .what-we-do {
   padding: 30px 5% 150px;
   background: #7C3AED;
   text-align: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-we-do::before {
+  content: '';
+  position: absolute;
+  /* Use inset to cover exactly 100% of the parent */
+  inset: 0; 
+  /* We define a background-size so the pattern knows when to repeat */
+  background-size: 170px 170px; 
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 60px,
+    rgba(255, 255, 255, 0.05) 60px, /* Increased opacity slightly to 0.05 so you can see it working */
+    rgba(255, 255, 255, 0.05) 120px
+  );
+  animation: moveLines 10s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes moveLines {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    /* Move by the same width as the background-size for a seamless loop */
+    background-position: 170px 0; 
+  }
 }
 
 .section-title {
   margin-bottom: 60px;
   color: #fff;
-
   font-family: "Bebas Neue", sans-serif;
   font-size: 80px;
   font-weight: 400;
   letter-spacing: 4px;
   line-height: 1.02;
+  position: relative;
+  z-index: 1;
 }
 
 .cards {
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .card {
@@ -539,6 +572,7 @@ body {
   font-size: 22px;
   font-weight: bold;
   padding: 10px 15px;
+  transition: background 0.3s ease;
 }
 
 .card h3 {
