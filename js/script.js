@@ -1,5 +1,6 @@
 // Custom dropdown logic for contact form
 document.addEventListener('DOMContentLoaded', function () {
+  const endpoint = 'send-email.php';
   const dropdown = document.querySelector('.ct-custom-dropdown');
   if (!dropdown) return;
   const selected = dropdown.querySelector('.ct-dropdown-selected');
@@ -54,6 +55,94 @@ document.addEventListener('DOMContentLoaded', function () {
         focused.click();
       }
       closeDropdown();
+    }
+  });
+
+  const contactForm = document.querySelector('form[name="contact"]');
+  const successModal = document.getElementById('contactSuccessModal');
+  if (!contactForm || !successModal) return;
+
+  const closeTargets = successModal.querySelectorAll('[data-close-modal="true"]');
+  const firstNameInput = contactForm.querySelector('input[name="first_name"]');
+
+  function openModal() {
+    successModal.classList.add('is-open');
+    successModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    successModal.classList.remove('is-open');
+    successModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    firstNameInput?.focus();
+  }
+
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    if (!input.value) {
+      dropdown.focus();
+      return;
+    }
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const formData = new FormData(contactForm);
+    formData.append('form_type', 'contact');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.dataset.originalText = submitButton.textContent;
+      submitButton.textContent = 'Sending...';
+    }
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      let payload = {};
+      try {
+        payload = await response.json();
+      } catch (error) {
+        payload = {};
+      }
+
+      if (!response.ok || !payload.success) {
+        throw new Error(payload.error || 'Unable to send message right now.');
+      }
+
+      openModal();
+      contactForm.reset();
+      selected.textContent = 'Select who you are';
+      input.value = '';
+      options.forEach(o => o.removeAttribute('aria-selected'));
+    } catch (error) {
+      alert(error.message || 'Unable to send message right now. Please try again.');
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
+      }
+    }
+  });
+
+  closeTargets.forEach(function (node) {
+    node.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && successModal.classList.contains('is-open')) {
+      closeModal();
     }
   });
 });

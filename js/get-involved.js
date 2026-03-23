@@ -1,6 +1,33 @@
 (() => {
   const body = document.body;
   const overlays = document.querySelectorAll('.gi-overlay');
+  const endpoint = 'send-email.php';
+
+  async function submitForm(formType, form) {
+    const formData = new FormData(form);
+    formData.append('form_type', formType);
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    let payload = {};
+    try {
+      payload = await response.json();
+    } catch (error) {
+      payload = {};
+    }
+
+    if (!response.ok || !payload.success) {
+      throw new Error(payload.error || 'Unable to send form right now.');
+    }
+
+    return payload;
+  }
 
   function setBodyLocked(locked) {
     body.style.overflow = locked ? 'hidden' : '';
@@ -53,10 +80,33 @@
     const success = document.getElementById(`success-${type}`);
     if (!form || !success) return;
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      form.style.display = 'none';
-      success.style.display = 'block';
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.dataset.originalText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+      }
+
+      try {
+        await submitForm(type, form);
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } catch (error) {
+        alert(error.message || 'Unable to send form right now. Please try again.');
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
+        }
+      }
     });
   });
 

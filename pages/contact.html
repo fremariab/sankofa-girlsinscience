@@ -38,7 +38,7 @@
       <article class="ct-info-card">
         <div>
           <p>Email Us</p>
-          <p><a href="mailto:girlsinscienceghana@gmail.com">girlsinscienceghana@gmail.com</a></p>
+          <p><a href="mailto:sankofagisfoundation@gmail.com">sankofagisfoundation@gmail.com</a></p>
         </div>
         <span>02</span>
       </article>
@@ -81,7 +81,7 @@
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            action="/contact-success.html"
+            action="#"
             novalidate
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -175,10 +175,25 @@
         </p>
         <div class="ct-cta-row">
           <input class="ct-cta-input" type="email" placeholder="Enter your email to stay in the loop" aria-label="Newsletter email" />
-          <a class="gi-btn" href="mailto:girlsinscienceghana@gmail.com?subject=Join%20the%20Movement">Join the Movement</a>
+          <a class="gi-btn" href="mailto:sankofagisfoundation@gmail.com?subject=Join%20the%20Movement">Join the Movement</a>
         </div>
       </div>
     </section>
+
+    <div class="ct-modal" id="contactSuccessModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ct-modal-title">
+      <div class="ct-modal__backdrop" data-close-modal="true"></div>
+      <div class="ct-modal__card">
+        <button class="ct-modal__close" type="button" data-close-modal="true" aria-label="Close confirmation">×</button>
+        <div class="ct-modal__badge" aria-hidden="true">✓</div>
+        <h2 id="ct-modal-title">Message sent successfully</h2>
+        <p>
+          Thank you for reaching out. We have received your message and will get back to you within 48 hours.
+        </p>
+        <div class="ct-modal__actions">
+          <button type="button" class="btn-outline btn-outline--purple" data-close-modal="true">Close</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <div data-include="partials/footer.html"></div>

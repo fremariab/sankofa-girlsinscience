@@ -248,24 +248,24 @@
           <div class="gi-field-row">
             <label class="gi-field">
               <span>First Name</span>
-              <input type="text" placeholder="Ada" required />
+              <input type="text" name="first_name" placeholder="Ada" required />
             </label>
             <label class="gi-field">
               <span>Last Name</span>
-              <input type="text" placeholder="Lovelace" required />
+              <input type="text" name="last_name" placeholder="Lovelace" required />
             </label>
           </div>
           <label class="gi-field">
             <span>Email Address</span>
-            <input type="email" placeholder="ada@example.com" required />
+            <input type="email" name="email" placeholder="ada@example.com" required />
           </label>
           <label class="gi-field">
             <span>Phone Number</span>
-            <input type="tel" placeholder="+233" required />
+            <input type="tel" name="phone" placeholder="+233" required />
           </label>
           <label class="gi-field">
             <span>Science Field</span>
-            <select required>
+            <select name="science_field" required>
               <option value="" disabled selected>Select your field</option>
               <option>Biology / Life Sciences</option>
               <option>Chemistry</option>
@@ -281,6 +281,7 @@
           <label class="gi-field">
             <span>Why do you want to volunteer?</span>
             <textarea
+              name="motivation"
               placeholder="Tell us what motivates you to support girls in science..."
               required
             ></textarea>
@@ -326,29 +327,29 @@
         <form id="form-sponsor" class="gi-form" action="#" method="post">
           <label class="gi-field">
             <span>Organization Name</span>
-            <input type="text" placeholder="Your Company Ltd." required />
+            <input type="text" name="organization" placeholder="Your Company Ltd." required />
           </label>
           <div class="gi-field-row">
             <label class="gi-field">
               <span>Contact Name</span>
-              <input type="text" placeholder="Full name" required />
+              <input type="text" name="contact_name" placeholder="Full name" required />
             </label>
             <label class="gi-field">
               <span>Job Title</span>
-              <input type="text" placeholder="CSR Manager" required />
+              <input type="text" name="job_title" placeholder="CSR Manager" required />
             </label>
           </div>
           <label class="gi-field">
             <span>Email Address</span>
-            <input type="email" placeholder="contact@company.com" required />
+            <input type="email" name="email" placeholder="contact@company.com" required />
           </label>
           <label class="gi-field">
             <span>Phone Number</span>
-            <input type="tel" placeholder="+233" required />
+            <input type="tel" name="phone" placeholder="+233" required />
           </label>
           <label class="gi-field">
             <span>Sponsorship Interest</span>
-            <select required>
+            <select name="sponsorship_interest" required>
               <option value="" disabled selected>
                 Select sponsorship type
               </option>
@@ -363,6 +364,7 @@
           <label class="gi-field">
             <span>Additional Message</span>
             <textarea
+              name="message"
               placeholder="Any specific initiatives or goals you would like to support..."
               required
             ></textarea>
@@ -409,22 +411,23 @@
           <div class="gi-field-row">
             <label class="gi-field">
               <span>First Name</span>
-              <input type="text" placeholder="First name" required />
+              <input type="text" name="first_name" placeholder="First name" required />
             </label>
             <label class="gi-field">
               <span>Last Name</span>
-              <input type="text" placeholder="Last name" required />
+              <input type="text" name="last_name" placeholder="Last name" required />
             </label>
           </div>
           <label class="gi-field">
             <span>Email Address</span>
-            <input type="email" placeholder="your@email.com" required />
+            <input type="email" name="email" placeholder="your@email.com" required />
           </label>
           <div class="gi-field-row">
             <label class="gi-field">
               <span>Age</span>
               <input
                 type="number"
+                name="age"
                 min="11"
                 max="35"
                 placeholder="Age"
@@ -433,7 +436,7 @@
             </label>
             <label class="gi-field">
               <span>School Level</span>
-              <select required>
+              <select name="school_level" required>
                 <option value="" disabled selected>Select</option>
                 <option>Junior High School</option>
                 <option>Senior High School</option>
@@ -444,11 +447,11 @@
           </div>
           <label class="gi-field">
             <span>School / Institution</span>
-            <input type="text" placeholder="Name of your school" required />
+            <input type="text" name="school" placeholder="Name of your school" required />
           </label>
           <label class="gi-field">
             <span>Science Interest Area</span>
-            <select required>
+            <select name="interest_area" required>
               <option value="" disabled selected>What excites you most?</option>
               <option>Biology / Life Sciences</option>
               <option>Chemistry</option>
@@ -463,6 +466,7 @@
           <label class="gi-field">
             <span>Tell us about yourself</span>
             <textarea
+              name="about"
               placeholder="Why do you want to join the Girls in Science program?"
               required
             ></textarea>
