@@ -3,8 +3,18 @@
   const nodes = document.querySelectorAll("[data-include]");
   await Promise.all([...nodes].map(async (el) => {
     const path = el.getAttribute("data-include");
-    const res = await fetch(path, { cache: "no-store" });
-    if (res.ok) el.outerHTML = await res.text();
+    const candidates = [path];
+    if (path && !path.startsWith("/")) {
+      candidates.push(`/${path.replace(/^\.?\//, "")}`);
+    }
+
+    for (const candidate of candidates) {
+      const res = await fetch(candidate, { cache: "no-store" });
+      if (res.ok) {
+        el.outerHTML = await res.text();
+        break;
+      }
+    }
   }));
 
   // Active nav by pathname
