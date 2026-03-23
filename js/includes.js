@@ -39,5 +39,31 @@
       menu.style.display = expanded ? "none" : "flex";
     });
   }
+
+  // Shared floating back-to-top button across all pages.
+  let backToTop = document.querySelector(".back-to-top");
+  if (!backToTop) {
+    backToTop = document.createElement("button");
+    backToTop.type = "button";
+    backToTop.className = "back-to-top";
+    backToTop.setAttribute("aria-label", "Back to top");
+    backToTop.textContent = "↑";
+    document.body.appendChild(backToTop);
+  }
+
+  const toggleBackToTop = () => {
+    if (window.scrollY > 320) {
+      backToTop.classList.add("is-visible");
+    } else {
+      backToTop.classList.remove("is-visible");
+    }
+  };
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  toggleBackToTop();
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
 })();
  

@@ -1,27 +1,28 @@
 @font-face {
-  font-family: "Bebas Neue";
-  src: url("../assets/fonts/BebasNeue-Regular.ttf") format("truetype"),
-    url("../assets/fonts/BebasNeue-Regular.otf") format("opentype");
+  font-family: 'Bebas Neue';
+  src:
+    url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype'),
+    url('../assets/fonts/BebasNeue-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 :root {
   --black: #000000;
-  --brand: #7C3AED;
+  --brand: #7c3aed;
   --gap: 45px;
-  --nav-h: 58px;
+  --nav-h: 66px;
   --ls: 0.8px;
-  --font: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
-  --brand-green: #14B8A6;
+  --font:
+    'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --brand-green: #14b8a6;
   --text-on-green: #ffffff;
-  --font-heading: "Bebas Neue", sans-serif;
-  --font-body: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
-  --purple: #7C3AED;
-  --green: #14B8A6;
-  --ink: #000000;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body:
+    'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --purple: #7c3aed;
+  --green: #14b8a6;
+  --ink: var(--black);
 }
 
 * {
@@ -53,7 +54,11 @@ body {
 
 .site-header {
   background: #fff;
-  padding-block: 8px;
+  padding-block: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .nav {
@@ -73,7 +78,7 @@ body {
 }
 .nav__sankofablack img {
   display: block;
-  height: 50px;
+  height: 60px;
   width: auto;
   object-fit: cover;
 }
@@ -85,24 +90,17 @@ body {
   margin: 0;
   align-items: center;
   gap: 20px;
-  
 }
 .nav__links a {
   text-decoration: none;
   color: var(--black);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: var(--ls);
   line-height: 1;
   padding: 6px 2px;
   outline: none;
   transition: color 0.18s ease;
-  pointer-events: none;
-  cursor: default;
-  opacity: 0.6; 
-}
-
-.nav__links a[data-nav="home"] {
   pointer-events: auto;
   cursor: pointer;
   opacity: 1;
@@ -114,7 +112,7 @@ body {
   position: relative;
 }
 .nav__links a.is-active::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -137,6 +135,58 @@ body {
   cursor: pointer;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--brand);
+  background: #fff;
+  color: var(--brand);
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+  z-index: 1100;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 1120px) {
   .nav {
     max-width: 1089px;
@@ -150,7 +200,7 @@ body {
   }
 
   .nav__sankofablack img {
-    height: 58px;
+    height: 66px;
     width: auto;
     object-fit: cover;
   }
@@ -177,7 +227,7 @@ body {
   .nav__links a.is-active::after,
   .nav__links a:hover::after,
   .nav__links a:focus-visible::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -208,24 +258,24 @@ body {
 }
 
 .hero-content h1 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 80px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(54px, 8vw, 114px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 5px;
-  color: #000;
+  color: var(--black);
   margin: 0 0 20px;
 }
 
 .hero-content h1 span {
-  color: #7C3AED;
+  color: #7c3aed;
 }
 
 .hero-content p {
   max-width: 683px;
-  color: #000;
-  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -242,9 +292,9 @@ body {
   height: 65px;
   flex-shrink: 0;
   border-radius: 0px;
-  border: 2px solid #14B8A6;
-  color: #14B8A6;
-  font-family: "Montserrat", sans-serif;
+  border: 2px solid #14b8a6;
+  color: #14b8a6;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -255,7 +305,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: #14B8A6;
+  background: #14b8a6;
   color: #fff;
 }
 .soaring-particles,
@@ -277,7 +327,7 @@ body {
   inset: 0; /* anchor inside wrap */
   width: 5px;
   height: 5px;
-  background: #7C3AED;
+  background: #7c3aed;
   border-radius: 50%;
   opacity: 0;
   filter: drop-shadow(0 0 6px rgba(128, 22, 184, 0.25));
@@ -285,7 +335,7 @@ body {
 }
 
 .particle.alt {
-  background: #14B8A6;
+  background: #14b8a6;
   filter: drop-shadow(0 0 6px rgba(80, 200, 120, 0.25));
 }
 
@@ -338,7 +388,9 @@ body {
   color: #fff;
   font-family: var(--font-body);
   padding: 20px;
-  transition: transform 0.18s ease, filter 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease;
 }
 .cta-content {
   display: flex;
@@ -376,17 +428,17 @@ body {
 }
 
 .cta-link:hover {
-  border-color: #f0f0f0;
+  border-color: #f5f5f5;
 }
 
 .cta--purple {
-  background: #7C3AED;
+  background: #7c3aed;
 }
 .cta--green {
-  background: #14B8A6;
+  background: #14b8a6;
 }
 .cta--black {
-  background: #000000;
+  background: var(--black);
 }
 
 .cta:hover,
@@ -422,19 +474,19 @@ body {
 }
 
 .about__title {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 80px;
   font-weight: 400;
   letter-spacing: 4px;
   line-height: 1.02;
-  color: #000;
+  color: var(--black);
   margin: 0 0 12px;
 }
 
 .about__body {
   max-width: 518px;
-  color: #000;
-  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.95px;
@@ -485,7 +537,7 @@ body {
 }
 .what-we-do {
   padding: 30px 5% 150px;
-  background: #7C3AED;
+  background: #7c3aed;
   text-align: center;
   color: #fff;
   position: relative;
@@ -496,14 +548,15 @@ body {
   content: '';
   position: absolute;
   /* Use inset to cover exactly 100% of the parent */
-  inset: 0; 
+  inset: 0;
   /* We define a background-size so the pattern knows when to repeat */
-  background-size: 170px 170px; 
+  background-size: 170px 170px;
   background-image: repeating-linear-gradient(
     45deg,
     transparent,
     transparent 60px,
-    rgba(255, 255, 255, 0.05) 60px, /* Increased opacity slightly to 0.05 so you can see it working */
+    rgba(255, 255, 255, 0.05) 60px,
+    /* Increased opacity slightly to 0.05 so you can see it working */
     rgba(255, 255, 255, 0.05) 120px
   );
   animation: moveLines 10s linear infinite;
@@ -517,14 +570,14 @@ body {
   }
   to {
     /* Move by the same width as the background-size for a seamless loop */
-    background-position: 170px 0; 
+    background-position: 170px 0;
   }
 }
 
 .section-title {
   margin-bottom: 60px;
   color: #fff;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 80px;
   font-weight: 400;
   letter-spacing: 4px;
@@ -549,7 +602,7 @@ body {
   border: none;
   text-align: left;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-  color: #000;
+  color: var(--black);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -560,14 +613,14 @@ body {
 }
 
 .card:hover .number-box {
-  background: #14B8A6;
+  background: #14b8a6;
 }
 
 .number-box {
   position: absolute;
   top: -25px;
   left: 20px;
-  background: #000000;
+  background: var(--black);
   color: #fff;
   font-size: 22px;
   font-weight: bold;
@@ -579,17 +632,17 @@ body {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #000;
+  color: var(--black);
 }
 
 .card p {
   font-size: 16px;
-  color: #444;
+  color: var(--black);
   line-height: 1.5;
 }
 
 .gallery {
-  background: #f9f9f9;
+  background: #f5f5f5;
 }
 
 .gallery-row {
@@ -610,7 +663,7 @@ body {
 }
 
 .gallery-belt {
-  background: #f9f9f9;
+  background: #f5f5f5;
   overflow: hidden;
   padding: 0;
 }
@@ -669,10 +722,10 @@ body {
   animation-fill-mode: both;
 }
 
-.belt[data-direction="ltr"] .track {
+.belt[data-direction='ltr'] .track {
   animation-name: scroll-ltr;
 }
-.belt[data-direction="rtl"] .track {
+.belt[data-direction='rtl'] .track {
   animation-name: scroll-rtl;
 }
 
@@ -693,7 +746,7 @@ body {
 
 .testimonial .quote {
   color: var(--purple);
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 45px;
   font-weight: 400;
   letter-spacing: 2.25px;
@@ -704,7 +757,7 @@ body {
   margin-top: 1rem;
   display: block;
   color: var(--purple);
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 21px;
   font-weight: 400;
   letter-spacing: 1.05px;
@@ -830,7 +883,7 @@ body {
   font-size: 12.5px;
   letter-spacing: 0.4px;
   opacity: 0.95;
-  text-transform:none;
+  text-transform: none;
 }
 
 .gi-btn {
@@ -847,7 +900,9 @@ body {
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 
   margin-top: 10px;
   width: 180px;
@@ -896,8 +951,6 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-
-
 
 .footer-brand h3 {
   font-family: var(--font-heading);

@@ -4,117 +4,178 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Sankofa Girls in Science Foundation</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
   <meta name="description" content="Reach out for partnerships, mentoring, donations, media, or general questions." />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="contact-page">
   <div data-include="partials/header.html"></div>
 
-  <main id="main" tabindex="-1">
-    <!-- Hero -->
-    <section class="hero" aria-label="Contact">
-      <div class="hero-content">
-        <h1>CONTACT</h1>
-        <p>We’re excited to hear from you—let’s build futures in STEM together.</p>
-        <a class="btn-outline" href="mailto:girlsinscienceghana@gmail.com">Email Us</a>
-      </div>
-    </section>
-
-    <!-- Contact details + Netlify form -->
-    <section class="about" id="contact-block">
-      <div class="about__text">
-        <h2 class="about__title">Get in Touch</h2>
-        <p class="about__body">
-          <strong>Address:</strong> Plot No. A36/3, Heavy Industrial Area, Akosombo Road, Tema, Ghana<br />
-          <strong>Phone:</strong> <a href="tel:+233244382639">+233 244 38 26 39</a><br />
-          <strong>Email:</strong> <a href="mailto:girlsinscienceghana@gmail.com">girlsinscienceghana@gmail.com</a>
+  <main id="main" class="contact-main" tabindex="-1">
+    <section class="ct-hero" aria-label="Contact hero">
+      <div class="ct-hero-bg" aria-hidden="true"></div>
+      <div class="ct-hero-overlay" aria-hidden="true"></div>
+      <div class="ct-hero-content">
+        <h1>Reach out and help</h1>
+        <p class="ct-hero-lede">
+          Whether you want to mentor, partner, donate, or ask a question, we
+          would love to hear from you.
         </p>
-
-        <!-- ✅ Netlify Forms integration -->
-        <form name="contact" method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              action="/contact-success.html" novalidate>
-
-          <!-- Netlify needs these -->
-          <input type="hidden" name="form-name" value="contact" />
-          <!-- Honeypot (hidden from users) -->
-          <p class="sr-only" aria-hidden="true">
-            <label>Don’t fill this out if you’re human:
-              <input name="bot-field" />
-            </label>
-          </p>
-
-          <label>
-            <span class="sr-only">Your name</span>
-            <input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
-          </label>
-          <br />
-          <label>
-            <span class="sr-only">Email</span>
-            <input type="email" name="email" placeholder="Email address" required aria-label="Email address" />
-          </label>
-          <br />
-          <label>
-            <span class="sr-only">Subject</span>
-            <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
-          </label>
-          <br />
-          <label>
-            <span class="sr-only">Message</span>
-            <textarea name="message" rows="6" placeholder="How can we help?" required aria-label="Message"></textarea>
-          </label>
-
-          <!-- Optional: Netlify reCAPTCHA widget
-          <div data-netlify-recaptcha="true"></div>
-          -->
-
-          <br />
-          <button class="btn-outline btn-outline--purple" type="submit">Send Message</button>
-        </form>
-      </div>
-
-      <figure class="about__media" aria-label="Map">
-        <iframe
-          title="GiS location map"
-          src="https://www.google.com/maps?q=Tema%20Ghana&output=embed"
-          width="100%" height="380" style="border:0" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </figure>
-    </section>
-
-    <!-- Extra help -->
-    <section class="what-we-do" aria-labelledby="help-title">
-      <h2 class="section-title" id="help-title">How We Can Help</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="number-box">01.</div>
-          <h3>Partnerships</h3>
-          <p>Collaborate on workshops, scholarships, or club support across Ghanaian schools.</p>
-        </article>
-        <article class="card">
-          <div class="number-box">02.</div>
-          <h3>Mentoring</h3>
-          <p>Volunteer as a mentor, host a career talk, or provide job-shadow opportunities.</p>
-        </article>
-        <article class="card">
-          <div class="number-box">03.</div>
-          <h3>Media &amp; Speaking</h3>
-          <p>Invite GiS to share impact stories and perspectives on girls in STEM.</p>
-        </article>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="get-involved" aria-labelledby="contact-cta">
-      <div class="gi-panel">
-        <h2 id="contact-cta" class="gi-title">Prefer to Talk?</h2>
-        <p class="gi-lede">Call us during business hours or drop an email—we’ll respond promptly.</p>
-        <a class="gi-btn" href="tel:+233244382639">Call +233 244 38 26 39</a>
+    <section class="ct-info-strip" aria-label="Contact information">
+      <article class="ct-info-card">
+        <div>
+          <p>Our Address</p>
+          <p>Plot No. A36/3, Akosombo Road, Tema, Ghana</p>
+        </div>
+        <span>01</span>
+      </article>
+      <article class="ct-info-card">
+        <div>
+          <p>Email Us</p>
+          <p><a href="mailto:girlsinscienceghana@gmail.com">girlsinscienceghana@gmail.com</a></p>
+        </div>
+        <span>02</span>
+      </article>
+      <article class="ct-info-card">
+        <div>
+          <p>Call Us</p>
+          <p><a href="tel:+233244382639">+233 244 38 26 39</a></p>
+        </div>
+        <span>03</span>
+      </article>
+    </section>
+
+    <section class="ct-contact-wrap" id="contact-block" aria-label="Contact form section">
+      <div class="ct-contact-card">
+        <aside class="ct-contact-left">
+          <div>
+            <h2>Send Us a Message</h2>
+            <p>
+              Have a question about our programs, scholarships, or how to get involved?
+              <br>
+              We read every message and aim to respond within 48 hours.
+            </p>
+
+            <div class="ct-note">
+              <strong>For Mentees</strong>
+              <p>Ask about joining a program, applying for a scholarship, or finding a mentor.</p>
+            </div>
+
+            <div class="ct-note">
+              <strong>For Mentors and Sponsors</strong>
+              <p>Interested in partnering, volunteering, or funding future scientists? Reach out here.</p>
+            </div>
+          
+          </div>
+        </aside>
+
+        <div class="ct-form-panel">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/contact-success.html"
+            novalidate
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="sr-only" aria-hidden="true">
+              <label>Do not fill this out if you are human:
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="ct-form-row">
+              <label class="ct-form-group">
+                <span>First Name</span>
+                <input type="text" name="first_name" placeholder="e.g. Maame Ama" required />
+              </label>
+              <label class="ct-form-group">
+                <span>Last Name</span>
+                <input type="text" name="last_name" placeholder="e.g. Mensah" required />
+              </label>
+            </div>
+
+            <div class="ct-form-row">
+              <label class="ct-form-group">
+                <span>Email Address</span>
+                <input type="email" name="email" placeholder="user@example.com" required />
+              </label>
+              <label class="ct-form-group">
+                <span>Phone (optional)</span>
+                <input type="tel" name="phone" placeholder="+233123456789" />
+              </label>
+            </div>
+
+            <div class="ct-form-row">
+              <label class="ct-form-group ct-full">
+                <span>I am a...</span>
+                <input type="hidden" name="audience" id="audience-input" required />
+                <div class="ct-custom-dropdown" tabindex="0" aria-haspopup="listbox" aria-expanded="false" role="combobox" aria-labelledby="audience-label">
+                  <span class="ct-dropdown-selected" id="audience-label">Select who you are</span>
+                  <div class="ct-dropdown-list" role="listbox" style="display: none;">
+                    <div class="ct-dropdown-option" data-value="student" role="option">Young scientist / student</div>
+                    <div class="ct-dropdown-option" data-value="parent" role="option">Parent or guardian</div>
+                    <div class="ct-dropdown-option" data-value="mentor" role="option">Mentor / Educator</div>
+                    <div class="ct-dropdown-option" data-value="sponsor" role="option">Corporate sponsor</div>
+                    <div class="ct-dropdown-option" data-value="foundation" role="option">Foundation / Grant maker</div>
+                    <div class="ct-dropdown-option" data-value="media" role="option">Media / Press</div>
+                    <div class="ct-dropdown-option" data-value="other" role="option">Other</div>
+                  </div>
+                  <svg class="ct-dropdown-chevron" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M6 9l5 5 5-5" stroke="#7e22ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </label>
+            </div>
+
+            <div class="ct-form-row">
+              <label class="ct-form-group ct-full">
+                <span>Message</span>
+                <textarea name="message" rows="6" placeholder="Tell us how we can help." required></textarea>
+              </label>
+            </div>
+
+            <div class="ct-form-footer">
+              <button class="btn-outline btn-outline--purple ct-submit" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="gi-media">
-        <img src="assets/images/img11.JPG" alt="Smiling students in class" loading="lazy" />
+    </section>
+
+    <section class="ct-audience" aria-label="Ways to engage">
+      <article class="ct-audience-card">
+        <h3>Volunteer and Mentor Opportunities</h3>
+        <p>
+          Become a role model and make a hands-on difference. Join our network of
+          scientists, engineers, and educators who inspire girls to pursue STEM careers.
+        </p>
+        <a href="get-involved.html" class="ct-audience-btn">View Opportunities</a>
+      </article>
+      <article class="ct-audience-card">
+        <h3>Sponsorship and Donations</h3>
+        <p>
+          Your support funds lab kits, scholarships, coding bootcamps, and mentorship programs.
+          Learn how you or your company can get involved.
+        </p>
+        <a href="get-involved.html" class="ct-audience-btn">Sponsor a Future Scientist</a>
+      </article>
+    </section>
+
+    <section class="ct-cta" aria-labelledby="contact-cta">
+      <div class="ct-cta-inner">
+        <h2 id="contact-cta">Be Part of the Next Scientific Revolution</h2>
+        <p>
+          Every great discovery starts with curiosity.<br>Help us make sure no girl's spark goes unnoticed.
+        </p>
+        <div class="ct-cta-row">
+          <input class="ct-cta-input" type="email" placeholder="Enter your email to stay in the loop" aria-label="Newsletter email" />
+          <a class="gi-btn" href="mailto:girlsinscienceghana@gmail.com?subject=Join%20the%20Movement">Join the Movement</a>
+        </div>
       </div>
     </section>
   </main>

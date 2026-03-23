@@ -1,3 +1,62 @@
+// Custom dropdown logic for contact form
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdown = document.querySelector('.ct-custom-dropdown');
+  if (!dropdown) return;
+  const selected = dropdown.querySelector('.ct-dropdown-selected');
+  const list = dropdown.querySelector('.ct-dropdown-list');
+  const options = dropdown.querySelectorAll('.ct-dropdown-option');
+  const input = document.getElementById('audience-input');
+
+  function openDropdown() {
+    dropdown.setAttribute('aria-expanded', 'true');
+    list.style.display = 'block';
+  }
+
+  function closeDropdown() {
+    dropdown.setAttribute('aria-expanded', 'false');
+    list.style.display = 'none';
+  }
+
+  dropdown.addEventListener('click', function (e) {
+    if (dropdown.getAttribute('aria-expanded') === 'true') {
+      closeDropdown();
+    } else {
+      openDropdown();
+    }
+  });
+
+  dropdown.addEventListener('blur', function () {
+    closeDropdown();
+  });
+
+  options.forEach(function (opt) {
+    opt.addEventListener('click', function (e) {
+      options.forEach(o => o.removeAttribute('aria-selected'));
+      opt.setAttribute('aria-selected', 'true');
+      selected.textContent = opt.textContent;
+      input.value = opt.dataset.value;
+      closeDropdown();
+    });
+  });
+
+  // Keyboard accessibility
+  dropdown.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      openDropdown();
+      e.preventDefault();
+    }
+    if (e.key === 'Escape') {
+      closeDropdown();
+    }
+    if (e.key === 'Enter' && dropdown.getAttribute('aria-expanded') === 'true') {
+      const focused = document.activeElement;
+      if (focused.classList.contains('ct-dropdown-option')) {
+        focused.click();
+      }
+      closeDropdown();
+    }
+  });
+});
 const btn = document.querySelector(".nav__toggle");
 const list = document.querySelector("#primary-menu");
 

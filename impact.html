@@ -1,111 +1,405 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Impact — Sankofa Girls in Science Foundation</title>
-  <meta name="description" content="Stories, numbers, and outcomes from our work with girls across Ghana: girls reached, mentors, schools, and funding impact." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <div data-include="partials/header.html"></div>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Impact</title>
+		<link rel="icon" type="image/png" href="assets/images/logo.png" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/impact.css" />
+	</head>
+	<body class="impact-page">
+		<div data-include="partials/header.html"></div>
 
-  <main id="main" tabindex="-1">
-    <!-- Hero -->
-    <section class="hero" aria-label="Impact">
-      <div class="hero-content">
-        <h1>IMPACT</h1>
-        <p>Shaping the future of STEM in Ghana — one girl, one story, one future at a time.</p>
-      </div>
-    </section>
+		<main>
+			<section class="impact-hero">
+				<div class="impact-hero__wash" aria-hidden="true"></div>
+				<div class="impact-container impact-hero__content">
+					<h1>The numbers behind the dream.</h1>
+					<p class="impact-hero__lede">
+						Every statistic on this page is a girl who was believed in. Here is
+						what happens when you invest in a girl in science.
+					</p>
+				</div>
+			</section>
 
-    <!-- Metrics (uses your counter animation in script.js) -->
-    <section class="get-involved" aria-label="Key metrics">
-      <div class="gi-panel">
-        <h2 class="gi-title">By the Numbers</h2>
-        <ul class="gi-stats" aria-label="Impact statistics">
-          <li class="gi-stat">
-            <span class="num"><span class="counter" data-target="1000">0</span><span class="plus">+</span></span>
-            <span class="label">girls reached</span>
-          </li>
-          <li class="gi-stat">
-            <span class="num"><span class="counter" data-target="30">0</span><span class="plus">+</span></span>
-            <span class="label">active mentors</span>
-          </li>
-          <li class="gi-stat">
-            <span class="num"><span class="counter" data-target="10">0</span><span class="plus">+</span></span>
-            <span class="label">schools &amp; clubs</span>
-          </li>
-        </ul>
-        <a class="gi-btn" href="get-involved.html">Help Us Grow</a>
-      </div>
-      <div class="gi-media">
-        <img src="assets/images/img10.jpg" alt="Students presenting a STEM project" loading="lazy" />
-      </div>
-    </section>
+			<section id="numbers" class="impact-numbers">
+				<div class="numbers-grid">
+					<article class="number-block number-block--purple">
+						<div class="number-block__num" data-target="500" data-suffix="+">0</div>
+						<div class="number-block__label">Girls Mentored Since 2010</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="100"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--green">
+						<div class="number-block__num" data-target="50" data-suffix="%+">0</div>
+						<div class="number-block__label">Alumni in Higher Education</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="50"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--black">
+						<div class="number-block__num" data-target="15">0</div>
+						<div class="number-block__label">Years of Transformation</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="75"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--purple-dark">
+						<div class="number-block__num" data-target="1">0</div>
+						<div class="number-block__label">Dedicated Science Library Built</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="100"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--white">
+						<div class="number-block__num number-block__num--ratio">7:1</div>
+						<div class="number-block__label number-block__label--dark">
+							Boy-to-girl ratio in university engineering - the gap we fight
+						</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill number-block__bar-fill--green" data-width="100"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--green-bright">
+						<div class="number-block__num" data-target="18">0</div>
+						<div class="number-block__label">STEM Workshops Delivered</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="60"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--black-soft">
+						<div class="number-block__num" data-target="200" data-suffix="+">0</div>
+						<div class="number-block__label">Mentors in Our Network</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="40"></div>
+						</div>
+					</article>
+					<article class="number-block number-block--green-mid">
+						<div class="number-block__num">2025</div>
+						<div class="number-block__label">Year We Became an Official Foundation</div>
+						<div class="number-block__bar">
+							<div class="number-block__bar-fill" data-width="100"></div>
+						</div>
+					</article>
+				</div>
+			</section>
 
-    <!-- Impact buckets -->
-    <section class="what-we-do" aria-labelledby="impact-buckets">
-      <h2 class="section-title" id="impact-buckets">Where Impact Happens</h2>
-      <div class="cards">
-        <article class="card" id="girls-impact">
-          <div class="number-box">01.</div>
-          <h3>Girls Impact</h3>
-          <p>
-            Growth in participants over time, success stories, and pathways into tertiary STEM.
-            We support study skills, confidence, leadership, and real-world exposure.
-          </p>
-        </article>
-        <article class="card" id="volunteers-impact">
-          <div class="number-box">02.</div>
-          <h3>Volunteers Impact</h3>
-          <p>
-            Our mentors and volunteers are the heartbeat of GiS — from peer coaching to career talks.
-            We highlight roles, training, and why they choose to give their time.
-          </p>
-        </article>
-        <article class="card" id="funding-impact">
-          <div class="number-box">03.</div>
-          <h3>Funding Impact</h3>
-          <p>
-            Every cedi counts. Donations power scholarships, workshops, and materials.
-            We showcase how funds are allocated and acknowledge sponsors.
-          </p>
-        </article>
-      </div>
-    </section>
+			<section class="stories-section impact-section-padding">
+				<div class="impact-container">
+					<div class="impact-intro reveal">
+						<span class="impact-tag">Mentee Stories</span>
+						<h2 class="impact-heading">The faces behind the numbers</h2>
+						<p class="impact-body">
+							These are the real results of what believing in a girl in science
+							looks like. Hover each card to hear her story.
+						</p>
+					</div>
 
-    <!-- Testimonial -->
-    <section class="testimonial" aria-label="Student testimonials">
-      <div class="testimonial-content">
-        <blockquote class="t-slide is-active">
-          <p class="quote">
-            “There’s an equal balance of learning and review so everyone gets it—and there’s tutoring if we need it. It’s fun when we go to new places.”
-          </p>
-          <footer class="author">— Margaritte, Class of 2021</footer>
-        </blockquote>
-      </div>
-    </section>
+					<div class="stories-grid">
+						<article class="flip-card reveal">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/images/img8.jpg" alt="Ama" loading="lazy" />
+									<div class="flip-card-front-overlay"></div>
+									<div class="flip-card-badge">Joined 2013</div>
+									<div class="flip-card-front-text">
+										<h3>Ama's Journey to Engineering</h3>
+										<p>Breman Asikuma to Accra</p>
+									</div>
+								</div>
+								<div class="flip-card-back">
+									<span class="year-badge">Class of 2013</span>
+									<blockquote>
+										"SGiS made me believe that engineering was not just for men
+										from big cities. It was for me too."
+									</blockquote>
+									<p>
+										Ama joined as a shy Form 1 student who had never met a
+										female engineer. Today she is a civil engineering graduate
+										working on infrastructure projects in Accra.
+									</p>
+								</div>
+							</div>
+						</article>
 
-    <!-- Callouts for detailed pages (optional future split) -->
-    <section class="about" aria-labelledby="deep-dive">
-      <div class="about__text">
-        <h2 class="about__title" id="deep-dive">Deep Dives</h2>
-        <p class="about__body">
-          Coming soon: separate views for <em>Girls Impact</em>, <em>Volunteers Impact</em>, and <em>Funding Impact</em>
-          with charts, profiles, and transparent allocation summaries.
-        </p>
-        <a href="get-involved.html#donate" class="btn-outline btn-outline--purple">Donate</a>
-      </div>
-      <figure class="about__media">
-        <img src="assets/images/img9.jpg" alt="Community celebration with students and mentors" />
-      </figure>
-    </section>
-  </main>
+						<article class="flip-card reveal reveal-delay-1">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/images/img10.jpg" alt="Abena" loading="lazy" />
+									<div class="flip-card-front-overlay"></div>
+									<div class="flip-card-badge">Joined 2016</div>
+									<div class="flip-card-front-text">
+										<h3>Abena's Path Into Medicine</h3>
+										<p>BASHS to University of Ghana Medical School</p>
+									</div>
+								</div>
+								<div class="flip-card-back">
+									<span class="year-badge">Class of 2016</span>
+									<blockquote>
+										"My mentor showed me a version of myself I had never
+										imagined. A doctor who looked like me, who came from where
+										I came from."
+									</blockquote>
+									<p>
+										Abena is now a second-year medical student at the University
+										of Ghana. She volunteers as a peer mentor for SGiS every
+										term, giving forward what she received.
+									</p>
+								</div>
+							</div>
+						</article>
 
-  <div data-include="partials/footer.html"></div>
-  <script src="js/includes.js" defer></script>
-  <script src="js/script.js" defer></script>
-</body>
+					
+
+						<article class="flip-card reveal reveal-delay-2">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/images/img11.JPG" alt="Efua" loading="lazy" />
+									<div class="flip-card-front-overlay"></div>
+									<div class="flip-card-badge">Joined 2018</div>
+									<div class="flip-card-front-text">
+										<h3>Efua Leads the Science Club</h3>
+										<p>From student to peer mentor</p>
+									</div>
+								</div>
+								<div class="flip-card-back">
+									<span class="year-badge">Class of 2018</span>
+									<blockquote>
+										"The Girls in Science Club did not just teach me chemistry.
+										It taught me how to lead, how to speak up, and how to show
+										up for others."
+									</blockquote>
+									<p>
+										Efua is now president of the Girls in Science Club at BASHS,
+										mentoring 40 younger students while completing her final
+										year in biochemistry.
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="measure-section impact-section-padding">
+				<div class="impact-container">
+					<div class="impact-intro reveal">
+						<span class="impact-tag">Our Approach</span>
+						<h2 class="impact-heading">We measure what actually matters</h2>
+					</div>
+
+					<div class="measure-grid">
+						<article class="measure-card measure-card--purple reveal">
+							<h3>Academic Advancement</h3>
+							<p>
+								Tracking each girl's progression from secondary school into STEM
+								higher education programs across Ghana and beyond.
+							</p>
+						</article>
+						<article class="measure-card measure-card--green reveal reveal-delay-1">
+							<h3>Mentorship Depth</h3>
+							<p>
+								Quality of one-on-one career counseling relationships, measured
+								by frequency, duration, and self-reported confidence growth.
+							</p>
+						</article>
+						<article class="measure-card measure-card--black reveal reveal-delay-2">
+							<h3>Soft Skills Mastery</h3>
+							<p>
+								Public speaking, leadership, time management, and self-awareness
+								that help students lead in and beyond the classroom.
+							</p>
+						</article>
+						<article class="measure-card measure-card--purple reveal reveal-delay-3">
+							<h3>Pay-It-Forward Rate</h3>
+							<p>
+								How many alumni return as peer mentors, volunteers, or board
+								members, our strongest marker of a self-sustaining movement.
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="outcomes-section impact-section-padding">
+				<div class="impact-container">
+					<div class="impact-intro reveal">
+						<span class="impact-tag">Where They Go</span>
+						<h2 class="impact-heading">Alumni career outcomes</h2>
+						<p class="impact-body">
+							Of the 50%+ who entered higher education, here is where our girls
+							are building their futures.
+						</p>
+					</div>
+
+					<div class="outcomes-chart reveal reveal-delay-1">
+						<div class="outcome-row">
+							<div class="outcome-field">Engineering</div>
+							<div class="outcome-track"><div class="outcome-bar" data-width="72"></div></div>
+							<div class="outcome-pct">72%</div>
+						</div>
+						<div class="outcome-row">
+							<div class="outcome-field">Medicine</div>
+							<div class="outcome-track"><div class="outcome-bar" data-width="58"></div></div>
+							<div class="outcome-pct">58%</div>
+						</div>
+						<div class="outcome-row">
+							<div class="outcome-field">Biochemistry</div>
+							<div class="outcome-track"><div class="outcome-bar" data-width="49"></div></div>
+							<div class="outcome-pct">49%</div>
+						</div>
+						<div class="outcome-row">
+							<div class="outcome-field">Scientific Research</div>
+							<div class="outcome-track"><div class="outcome-bar" data-width="38"></div></div>
+							<div class="outcome-pct">38%</div>
+						</div>
+						<div class="outcome-row">
+							<div class="outcome-field">Education and Mentorship</div>
+							<div class="outcome-track"><div class="outcome-bar" data-width="28"></div></div>
+							<div class="outcome-pct">28%</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="map-section impact-section-padding">
+				<div class="impact-container">
+					<div class="map-grid">
+						<div class="map-wrap reveal-left" id="impactMapWrap">
+							<svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg" aria-label="Programme map of Ghana">
+								<defs>
+									<pattern id="ghanaDots" width="8" height="8" patternUnits="userSpaceOnUse">
+										<rect x="2.4" y="2.4" width="3.2" height="3.2" fill="#737682" />
+									</pattern>
+								</defs>
+								<path
+									class="ghana-path"
+									d="M70,18 L214,18 L214,34 L228,34 L242,50 L238,67 L246,87 L242,117 L248,146 L243,176 L247,206 L241,239 L245,274 L267,292 L285,315 L267,332 L239,326 L217,337 L194,348 L168,357 L142,368 L118,360 L96,346 L76,336 L58,343 L40,334 L47,313 L31,291 L17,264 L22,238 L35,214 L50,194 L63,175 L68,152 L60,132 L60,106 L56,84 L61,58 L67,36 L70,36 Z"
+								/>
+
+								<g class="map-node" data-region="Central Region" data-info="Breman Asikuma - Home base. BASHS and Science Library." data-girls="500+" transform="translate(124,248)">
+									<circle class="ring" r="6" />
+									<circle class="ring ring2" r="6" />
+									<circle class="dot" r="5" />
+								</g>
+								<g class="map-node" data-region="Greater Accra" data-info="Accra - Growing alumni network and partner mentors." data-girls="80+" transform="translate(206,331)">
+									<circle class="ring" r="5" />
+									<circle class="ring ring2" r="5" />
+									<circle class="dot dot--green" r="4" />
+								</g>
+								<g class="map-node" data-region="Ashanti Region" data-info="Kumasi - KNUST connections and STEM partnerships." data-girls="60+" transform="translate(114,210)">
+									<circle class="ring" r="4.5" />
+									<circle class="ring ring2" r="4.5" />
+									<circle class="dot dot--purple" r="3.5" />
+								</g>
+								<g class="map-node" data-region="Northern Region" data-info="Tamale - Newest expansion region, 2024." data-girls="25+" transform="translate(153,110)">
+									<circle class="ring" r="4" />
+									<circle class="ring ring2" r="4" />
+									<circle class="dot dot--black" r="3" />
+								</g>
+							</svg>
+
+							<div class="node-tooltip" id="impactMapTooltip">
+								<strong id="impactTooltipTitle">-</strong>
+								<span id="impactTooltipInfo">-</span>
+								<span id="impactTooltipGirls" class="tooltip-girls"></span>
+							</div>
+						</div>
+
+						<div class="progress-section reveal-right">
+							<span class="impact-tag impact-tag--light">2030 Vision</span>
+							<h2 class="impact-heading impact-heading--light">Where we are going next</h2>
+							<p class="impact-body impact-body--light">
+								The movement is growing. These are our goals and how far we
+								have already come.
+							</p>
+
+							<div class="prog-item">
+								<div class="prog-header">
+									<span class="prog-label">Girls Empowered</span>
+									<span class="prog-meta">500 to 2,000</span>
+								</div>
+								<div class="prog-track"><div class="prog-fill" data-width="25"></div></div>
+							</div>
+
+							<div class="prog-item">
+								<div class="prog-header">
+									<span class="prog-label">Partner Schools</span>
+									<span class="prog-meta">1 to 20</span>
+								</div>
+								<div class="prog-track"><div class="prog-fill" data-width="5"></div></div>
+							</div>
+
+							<div class="prog-item">
+								<div class="prog-header">
+									<span class="prog-label">Active Mentors</span>
+									<span class="prog-meta">200 to 500</span>
+								</div>
+								<div class="prog-track"><div class="prog-fill" data-width="40"></div></div>
+							</div>
+
+							<div class="prog-item">
+								<div class="prog-header">
+									<span class="prog-label">Alumni in STEM Careers</span>
+									<span class="prog-meta">50% to 75%</span>
+								</div>
+								<div class="prog-track"><div class="prog-fill" data-width="67"></div></div>
+							</div>
+
+							<div class="prog-item">
+								<div class="prog-header">
+									<span class="prog-label">Global Diaspora Chapters</span>
+									<span class="prog-meta">0 to 5</span>
+								</div>
+								<div class="prog-track"><div class="prog-fill" data-width="0"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		
+
+			<section class="impact-cta-blocks">
+				<article class="impact-cta impact-cta--purple ripple-container" data-ripple>
+					<span class="impact-cta__num">01</span>
+					<h3>Multiply Our Impact</h3>
+					<p>
+						Every donation directly funds mentorship, workshops, and resources
+						for girls in rural Ghana.
+					</p>
+					<a href="get-involved.html">Donate Now</a>
+				</article>
+				<article class="impact-cta impact-cta--green ripple-container" data-ripple>
+					<span class="impact-cta__num">02</span>
+					<h3>Become A Mentor</h3>
+					<p>
+						Be the role model that shows a girl in science that her dream is
+						not just possible, it is probable.
+					</p>
+					<a href="get-involved.html">Apply Now</a>
+				</article>
+				<article class="impact-cta impact-cta--black ripple-container" data-ripple>
+					<span class="impact-cta__num">03</span>
+					<h3>Fund a Workshop</h3>
+					<p>
+						Partner with SGiS to bring hands-on STEM experiences to girls who
+						have never had access to them before.
+					</p>
+					<a href="get-involved.html">Partner With Us</a>
+				</article>
+			</section>
+		</main>
+
+		<div data-include="partials/footer.html"></div>
+
+		<script src="js/impact.js" defer></script>
+		<script src="js/includes.js" defer></script>
+	</body>
 </html>
