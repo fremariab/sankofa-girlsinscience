@@ -2,6 +2,14 @@
   const body = document.body;
   const overlays = document.querySelectorAll('.gi-overlay');
   const endpoint = 'send-email.php';
+  const successModal = document.getElementById('giSuccessModal');
+  const successText = document.getElementById('gi-success-text');
+
+  const successMessages = {
+    volunteer: 'Thank you for volunteering. We will review your application and contact you soon.',
+    sponsor: 'Thank you for your sponsorship enquiry. We will be in touch soon to discuss partnership options.',
+    mentee: 'Welcome to the SGiS journey. We will review your application and get back to you soon.',
+  };
 
   async function submitForm(formType, form) {
     const formData = new FormData(form);
@@ -31,6 +39,23 @@
 
   function setBodyLocked(locked) {
     body.style.overflow = locked ? 'hidden' : '';
+  }
+
+  function openSuccessModal(type) {
+    if (!successModal) return;
+    if (successText) {
+      successText.textContent = successMessages[type] || 'Thank you. Your submission has been received.';
+    }
+    successModal.classList.add('open');
+    successModal.setAttribute('aria-hidden', 'false');
+    setBodyLocked(true);
+  }
+
+  function closeSuccessModal() {
+    if (!successModal) return;
+    successModal.classList.remove('open');
+    successModal.setAttribute('aria-hidden', 'true');
+    setBodyLocked(false);
   }
 
   function openModal(type) {
@@ -71,14 +96,23 @@
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
+    if (successModal && successModal.classList.contains('open')) {
+      closeSuccessModal();
+      return;
+    }
     overlays.forEach((overlay) => overlay.classList.remove('open'));
     setBodyLocked(false);
   });
 
+  if (successModal) {
+    successModal.querySelectorAll('[data-close-gi-success="true"]').forEach((node) => {
+      node.addEventListener('click', closeSuccessModal);
+    });
+  }
+
   ['volunteer', 'sponsor', 'mentee'].forEach((type) => {
     const form = document.getElementById(`form-${type}`);
-    const success = document.getElementById(`success-${type}`);
-    if (!form || !success) return;
+    if (!form) return;
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -97,8 +131,9 @@
 
       try {
         await submitForm(type, form);
-        form.style.display = 'none';
-        success.style.display = 'block';
+        closeModal(type);
+        openSuccessModal(type);
+        form.reset();
       } catch (error) {
         alert(error.message || 'Unable to send form right now. Please try again.');
       } finally {

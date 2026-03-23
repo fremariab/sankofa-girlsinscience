@@ -43,6 +43,26 @@
   const form = document.getElementById("resourceRequestForm");
   if (!form) return;
 
+  const successModal = document.getElementById("resourceSuccessModal");
+  const closeModal = () => {
+    if (!successModal) return;
+    successModal.classList.remove("open");
+    successModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  if (successModal) {
+    successModal
+      .querySelectorAll('[data-close-rs-success="true"]')
+      .forEach((node) => node.addEventListener("click", closeModal));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && successModal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+  }
+
   const status = document.createElement("p");
   status.style.marginTop = "12px";
   status.style.fontSize = "14px";
@@ -89,8 +109,12 @@
       }
 
       form.reset();
-      status.style.color = "#15803d";
-      status.textContent = "Request sent successfully. We will contact you soon.";
+      status.textContent = "";
+      if (successModal) {
+        successModal.classList.add("open");
+        successModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
     } catch (error) {
       status.style.color = "#b91c1c";
       status.textContent = error.message || "Unable to send request right now.";

@@ -1001,6 +1001,92 @@
   transform: none;
 }
 
+.rs-submit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.rs-submit-modal.open {
+  display: flex;
+}
+
+.rs-submit-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+}
+
+.rs-submit-modal__card {
+  position: relative;
+  width: min(560px, 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #fff;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 24px 50px rgba(17, 24, 39, 0.25);
+  z-index: 1;
+}
+
+.rs-submit-modal__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.rs-submit-modal__badge {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #14b8a6 0%, #22c55e 100%);
+}
+
+.rs-submit-modal__card h3 {
+  margin: 0;
+  color: var(--black);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5.2vw, 48px);
+  line-height: 0.95;
+}
+
+.rs-submit-modal__card p {
+  margin: 12px auto 18px;
+  max-width: 44ch;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.rs-submit-modal__btn {
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  background: #fff;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rs-submit-modal__btn:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
 @media (max-width: 1100px) {
   .rs-hero-main {
     min-height: 56vh;
