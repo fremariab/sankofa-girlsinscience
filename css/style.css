@@ -185,6 +185,60 @@ body {
     height: 44px;
     font-size: 20px;
   }
+  /* Mobile nav overlay styles */
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 80vw;
+    max-width: 320px;
+    background: #fff;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 24px 24px 24px;
+    gap: 28px;
+    z-index: 2100; /* Increased z-index above overlay */
+    display: none;
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+    transform: translateX(100%);
+  }
+  .nav__links.open {
+    display: flex !important;
+    transform: translateX(0);
+  }
+  .nav__links a {
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .nav__toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2100;
+  }
+  .nav {
+    position: relative;
+    justify-content: space-between;
+  }
+  /* Optional: darken background when menu is open */
+  .nav__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 1999;
+  }
+  .nav__overlay.open {
+    display: block;
+  }
 }
 
 @media (min-width: 1120px) {

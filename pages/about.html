@@ -3,17 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="../" />
     <title>About Us</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/about.css" />
   </head>
   <body class="about-page">
-    <div data-include="partials/header.html"></div>
+    <div data-include="../partials/header.html"></div>
 
     <section class="about-hero" id="hero">
       <div class="about-hero-bg" aria-hidden="true"></div>
@@ -24,11 +23,9 @@
           to <em>see herself</em><br />
           in science.
         </h1>
-
-
       </div>
     </section>
-   
+
     <div class="story-intro reveal">
       <p>
         In rural Ghana, brilliant young girls often face a
@@ -42,7 +39,7 @@
         dreams into reality.
       </p>
     </div>
- <section class="section-padding">
+    <section class="section-padding">
       <div class="container">
         <div class="about-grid reveal">
           <div class="about-text">
@@ -67,14 +64,14 @@
           </div>
 
           <div class="about-image">
-            <img src="assets/images/img7.jpg" alt="Founder Nana Beecham" />
+            <img src="../assets/images/img7.jpg" alt="Founder Nana Beecham" />
           </div>
         </div>
       </div>
     </section>
     <div class="story-block reveal">
       <div class="block-image">
-        <img src="assets/images/img13.jpeg" alt="Why we exist" />
+        <img src="../assets/images/img13.jpeg" alt="Why we exist" />
       </div>
       <div class="block-text">
         <span class="block-num">01</span>
@@ -96,7 +93,7 @@
 
     <div class="story-block reverse reveal">
       <div class="block-image">
-        <img src="assets/images/img10.jpg" alt="How we started" />
+        <img src="../assets/images/img10.jpg" alt="How we started" />
       </div>
       <div class="block-text">
         <span class="block-num">02</span>
@@ -117,7 +114,7 @@
 
     <div class="story-block reveal">
       <div class="block-image">
-        <img src="assets/images/img11.JPG" alt="What we believe" />
+        <img src="../assets/images/img11.JPG" alt="What we believe" />
       </div>
       <div class="block-text">
         <span class="block-num">03</span>
@@ -137,8 +134,6 @@
       </div>
     </div>
 
-   
-
     <section class="philosophy-section section-padding">
       <div class="container text-center reveal">
         <span class="section-tag" style="color: rgba(255, 255, 255, 0.66)">
@@ -154,7 +149,7 @@
         </p>
       </div>
     </section>
- <section class="timeline-section section-padding gray-bg">
+    <section class="timeline-section section-padding gray-bg">
       <div class="container">
         <div class="text-center reveal" style="margin-bottom: 3rem">
           <span class="section-tag">Our Journey</span>
@@ -237,16 +232,28 @@
           Join us in building the future every girl in science deserves.
         </p>
         <div class="cta-buttons reveal reveal-delay-2">
-          <a href="pages/get-involved.html" class="btn btn-white">Become a Mentor</a>
-          <a href="pages/get-involved.html" class="btn btn-gold"
+          <a
+            href="../pages/get-involved.html#detail-mentee"
+            class="btn btn-white"
+            >Become a Mentee</a
+          >
+
+          <a
+            href="../pages/get-involved.html#detail-volunteer"
+            class="btn btn-outline"
+            style="background-color: black; border: 2px solid #000"
+            >Volunteer With Us</a
+          >
+          <a
+            href="../pages/get-involved.html#detail-sponsor"
+            class="btn btn-gold"
             >Support Our Mission</a
           >
-          <a href="pages/get-involved.html" class="btn btn-outline" style="background-color:black;border: 2px solid #000">Partner With Us</a>
         </div>
       </div>
     </section>
 
-    <div data-include="partials/footer.html"></div>
+    <div data-include="../partials/footer.html"></div>
 
     <script>
       const revealObs = new IntersectionObserver(
@@ -273,7 +280,10 @@
 
       const timelineTrack = document.getElementById('timelineTrack');
 
-      if (timelineTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (
+        timelineTrack &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
         let isPaused = false;
         const step = 1;
         const tickMs = 18;
@@ -281,7 +291,8 @@
         const autoScrollTimer = setInterval(() => {
           if (isPaused) return;
 
-          const maxScroll = timelineTrack.scrollWidth - timelineTrack.clientWidth;
+          const maxScroll =
+            timelineTrack.scrollWidth - timelineTrack.clientWidth;
           if (maxScroll <= 0) return;
 
           if (timelineTrack.scrollLeft >= maxScroll) {
@@ -307,9 +318,13 @@
           isPaused = false;
         });
 
-        timelineTrack.addEventListener('touchstart', () => {
-          isPaused = true;
-        }, { passive: true });
+        timelineTrack.addEventListener(
+          'touchstart',
+          () => {
+            isPaused = true;
+          },
+          { passive: true },
+        );
 
         timelineTrack.addEventListener('touchend', () => {
           isPaused = false;
@@ -399,7 +414,7 @@
         .forEach((goal) => goalObs.observe(goal));
     </script>
 
-    <script src="js/script.js" defer></script>
-    <script src="js/includes.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/includes.js" defer></script>
   </body>
 </html>

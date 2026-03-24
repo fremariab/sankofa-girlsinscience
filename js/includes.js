@@ -42,11 +42,29 @@
   // Mobile nav toggle
   const toggle = document.querySelector(".nav__toggle");
   const menu = document.getElementById("primary-menu");
+  // Add overlay for mobile menu
+  let navOverlay = document.querySelector('.nav__overlay');
+  if (!navOverlay) {
+    navOverlay = document.createElement('div');
+    navOverlay.className = 'nav__overlay';
+    document.body.appendChild(navOverlay);
+  }
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
       const expanded = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!expanded));
-      menu.style.display = expanded ? "none" : "flex";
+      if (!expanded) {
+        menu.classList.add('open');
+        navOverlay.classList.add('open');
+      } else {
+        menu.classList.remove('open');
+        navOverlay.classList.remove('open');
+      }
+    });
+    navOverlay.addEventListener('click', () => {
+      menu.classList.remove('open');
+      navOverlay.classList.remove('open');
+      toggle.setAttribute("aria-expanded", "false");
     });
   }
 
