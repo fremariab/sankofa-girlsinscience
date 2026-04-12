@@ -336,7 +336,7 @@
   max-width: 620px;
   color: var(--rs-muted);
   line-height: 1.8;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .rs-toolkit-grid {
@@ -509,7 +509,7 @@
 .rs-panel-title {
   font-family: var(--font-heading);
   font-size: clamp(38px, 6vw, 72px);
-  line-height: 0.9;
+  line-height: 0.4;
 }
 
 .rs-panel-title em {
@@ -520,7 +520,7 @@
 .rs-panel-intro {
   margin-top: 12px;
   color: var(--rs-muted);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.75;
 }
 
@@ -581,13 +581,18 @@
 
 .rs-internship-grid {
   margin-top: 12px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
 .rs-internship-card {
   margin: 0;
+  width: calc(50% - 6px);
+  max-width: calc(50% - 6px);
+  min-width: 180px;
+  flex: 1 1 calc(50% - 6px);
   border: 1px solid var(--rs-line);
   background: #fff;
   display: flex;
@@ -866,7 +871,7 @@
 .rs-request-left h3 {
   font-family: var(--font-heading);
   font-size: clamp(44px, 7vw, 88px);
-  line-height: 0.86;
+  line-height: 0.3;
 }
 
 .rs-request-left h3 em {
@@ -877,7 +882,7 @@
 .rs-request-left p,
 .rs-request-left li {
   color: var(--rs-muted);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -1136,6 +1141,13 @@
 
   .rs-mentor-list {
     grid-template-columns: 1fr;
+  }
+
+  .rs-internship-card {
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    min-width: 0;
   }
 
   .rs-pills {

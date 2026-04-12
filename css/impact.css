@@ -17,7 +17,7 @@
 
 .impact-tag {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--green);
@@ -140,7 +140,7 @@
   margin: 1rem auto 0;
   max-width: 640px;
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 18px;
   color: color-mix(in oklab, var(--green) 78%, black);
 }
 
@@ -265,7 +265,7 @@
 
 .flip-card {
   perspective: 1200px;
-  height: 410px;
+  height: 650px;
 }
 
 .flip-card-inner {
@@ -374,7 +374,7 @@
 
 .flip-card-back p {
   margin: 0;
-  font-size: 0.82rem;
+  font-size:18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.84);
 }
@@ -409,7 +409,7 @@
 
 .measure-card p {
   margin: 0.7rem 0 0;
-  font-size: 0.92rem;
+  font-size:18px;
   line-height: 1.7;
   color: #454545;
 }
@@ -433,43 +433,62 @@
 .outcomes-chart {
   max-width: 760px;
   margin: 2.5rem auto 0;
-  display: grid;
-  gap: 1.2rem;
 }
 
-.outcome-row {
-  display: grid;
-  grid-template-columns: 1.2fr 3fr auto;
+.outcomes-fields {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.9rem;
-  align-items: center;
+  justify-content: center;
 }
 
-.outcome-field {
-  font-size: 0.84rem;
-  letter-spacing: 0.04em;
+.outcome-pill {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #dfdfe8;
+  color: #1f1f26;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.outcome-track {
-  height: 8px;
-  background: #e6e6e6;
+.outcome-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--green);
 }
 
-.outcome-bar {
-  width: 0;
-  height: 100%;
+.outcome-pill:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--green) 72%, white);
+  outline-offset: 2px;
+}
+
+.outcome-pill.is-active {
   background: var(--green);
-  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-color: var(--green);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(20, 184, 166, 0.28);
 }
 
-.outcome-pct {
-  min-width: 45px;
-  text-align: right;
-  font-family: var(--font-heading);
-  font-size: 32px;
-  line-height: 0.85;
-  color: var(--purple);
+.outcome-detail {
+  margin: 1.1rem auto 0;
+  max-width: 760px;
+  min-height: 3.2rem;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4a4a53;
 }
 
 .map-section {
@@ -675,13 +694,13 @@
 .impact-cta p {
   margin: 0.8rem 0 0;
   max-width: 380px;
-  font-size: 0.9rem;
+  font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .impact-cta a {
-  margin-top: auto;
+  margin-top: 30px;
   align-self: flex-start;
   color: #fff;
   text-decoration: none;
@@ -785,12 +804,7 @@
     min-height: 210px;
   }
 
-  .outcome-row {
-    grid-template-columns: 1fr;
-    gap: 0.45rem;
-  }
-
-  .outcome-pct {
-    text-align: left;
+  .outcomes-fields {
+    justify-content: flex-start;
   }
 }

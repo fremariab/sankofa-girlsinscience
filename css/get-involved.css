@@ -177,7 +177,7 @@
   margin: 0 auto 48px;
   color: var(--gi-text-light);
   font:
-    300 1.05rem / 1.7 'DM Sans',
+    300 18px / 1.7 'DM Sans',
     sans-serif;
   animation: gi-fade-up 0.7s ease 0.2s both;
 }
@@ -271,7 +271,7 @@
   margin: 0 auto;
   color: var(--gi-text-light);
   font:
-    400 0.95rem / 1.7 'DM Sans',
+    400 18px / 1.7 'DM Sans',
     sans-serif;
 }
 
@@ -398,7 +398,7 @@
   border-radius: 999px;
   margin-bottom: 16px;
   font:
-    600 0.7rem/1 'DM Sans',
+    600 18px/1 'DM Sans',
     sans-serif;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -448,7 +448,7 @@
   padding: 8px 0;
   color: rgba(200, 214, 240, 0.86);
   font:
-    400 0.85rem/1.5 'DM Sans',
+    400 18px/1.5 'DM Sans',
     sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
@@ -486,7 +486,7 @@
   text-decoration: none;
   padding: 14px 28px;
   font:
-    600 0.88rem/1 'DM Sans',
+    600 18px/1 'DM Sans',
     sans-serif;
   letter-spacing: 0.02em;
   transition:
@@ -522,7 +522,7 @@
 }
 
 .gi-detail-inner {
-  max-width: 860px;
+  max-width: 1560px;
   margin: 0 auto;
 }
 
@@ -612,7 +612,7 @@
   margin: 0 0 10px;
   color: var(--green);
   font:
-    700 0.7rem/1.4 'DM Sans',
+    700 90px/1.4 'DM Sans',
     sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -622,7 +622,7 @@
   margin: 0;
   color: var(--gi-text-light);
   font:
-    400 0.9rem/1.75 'DM Sans',
+    400 18px/1.75 'DM Sans',
     sans-serif;
 }
 

@@ -5,7 +5,7 @@
 }
 
 .programs-container {
-  max-width: 1200px;
+  max-width: 1560px;
   margin-inline: auto;
   padding-inline: clamp(20px, 5vw, 40px);
 }
@@ -42,7 +42,7 @@
 
 .programs-body {
   margin: 1rem 0 0;
-  font-size: clamp(15px, 1.6vw, 17px);
+  font-size: 18px;
   line-height: 1.75;
   color: var(--black);
 }
@@ -118,7 +118,7 @@
 .programs-hero__lede {
   margin: 1rem auto 0;
   max-width: 620px;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.86);
   line-height: 1.8;
 }
@@ -147,8 +147,8 @@
 .overview-grid {
   margin-top: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
-  gap: 1.2rem;
+  grid-template-columns:repeat(3,1fr);
+  gap: .2rem;
 }
 
 .ov-card {
@@ -181,7 +181,7 @@
   margin: 0;
   color: var(--black);
   line-height: 1.7;
-  font-size: 0.9rem;
+  font-size: 18px;
 }
 
 .ov-link {
@@ -383,7 +383,7 @@
   margin: 0;
   color: var(--black);
   font-family: var(--font-heading);
-  font-size: 30px;
+  font-size: 35px;
   line-height: 0.9;
   font-weight: 400;
 }
@@ -391,7 +391,7 @@
 .step-desc {
   margin: 0.45rem 0 0;
   color: var(--black);
-  font-size: 0.8rem;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -438,7 +438,7 @@
   padding: 0.75rem 0.9rem;
   border-left: 2px solid  var(--purple);
   color: white;
-  font-size: 0.78rem;
+  font-size: 18px ;
   line-height: 1.65;
 }
 
@@ -650,7 +650,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  width: 130px;
+  width: 200px;
   border: 1px solid #e6e6e6;
   background: #fff;
   padding: 1rem 0.8rem 0.7rem;
@@ -665,8 +665,8 @@
 }
 
 .partner-logo img {
-  width: 100%;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   filter: grayscale(1);
   opacity: 0.7;

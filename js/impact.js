@@ -76,6 +76,53 @@
     if (element) widthObserver.observe(element);
   });
 
+  const outcomePills = Array.from(document.querySelectorAll(".outcome-pill"));
+  const outcomeDetail = document.getElementById("outcomeDetail");
+
+  if (outcomePills.length > 0 && outcomeDetail) {
+    const setActiveOutcome = (pill) => {
+      outcomePills.forEach((item) => {
+        const isActive = item === pill;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      const detail = pill.dataset.detail || "";
+      outcomeDetail.textContent = detail ? `${detail}` : detail;
+    };
+
+    outcomePills.forEach((pill, index) => {
+      pill.addEventListener("click", () => {
+        setActiveOutcome(pill);
+      });
+
+      pill.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          setActiveOutcome(pill);
+          return;
+        }
+
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+          event.preventDefault();
+          const next = outcomePills[(index + 1) % outcomePills.length];
+          next.focus();
+          setActiveOutcome(next);
+          return;
+        }
+
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+          event.preventDefault();
+          const prev = outcomePills[(index - 1 + outcomePills.length) % outcomePills.length];
+          prev.focus();
+          setActiveOutcome(prev);
+        }
+      });
+    });
+
+    setActiveOutcome(outcomePills[0]);
+  }
+
   const tooltip = document.getElementById("impactMapTooltip");
   const title = document.getElementById("impactTooltipTitle");
   const info = document.getElementById("impactTooltipInfo");
