@@ -10,7 +10,7 @@
       }
 
       for (const candidate of candidates) {
-        const res = await fetch(candidate, { cache: 'no-store' });
+        const res = await fetch(candidate);
         if (res.ok) {
           el.outerHTML = await res.text();
           break;
