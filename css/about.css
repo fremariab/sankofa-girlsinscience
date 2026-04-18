@@ -960,9 +960,21 @@ body {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+
 }
+
+@media (min-width: 721px) {
+  .team-grid > .team-card:last-child {
+    grid-column: 2 / 4;
+    max-width: 50%;
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+
 
 .team-card {
   background: var(--green);
